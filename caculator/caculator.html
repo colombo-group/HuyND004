@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		May tinh bo tui
+	</title>
+</head>
+<body>
+	<style type="text/css">
+		#box{
+			width: 350px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px black;
+			/* height: 370px; */
+			margin: 0 auto; /* For Firefox 3.6 to 15 */
+		    background: -webkit-linear-gradient(bottom,#b6b6b6 70%, #f7f7f7);
+		    background: -o-linear-gradient(top,#b6b6b6 70%, #f7f7f7);
+		    background: linear-gradient(top,#b6b6b6 70%, #f7f7f7);
+		}
+		table{
+			margin: 0 auto;
+		}
+		tr{
+			border: 0;
+			background: none;
+		}
+		td{
+			width: 70px;
+			height: 50px;
+			/* background: #eeeeee; */
+			border: none;
+		}
+		td input{
+			width: 100%;
+			height: 100%;
+			background: #eeeeee;
+			border-radius: 5px;
+			/* border: 1px solid #dadada; */
+			outline: none;
+		}
+		#screen{
+			margin: 0px auto;
+			width: 290px;
+			height: 70px;
+			margin-bottom: 10px;
+			padding-top: 20px;
+			border-radius: 10px;
+			
+		}
+		#screen #re_screen{
+			/* margin: 0 auto; */
+			/* padding-right: 0px; */
+			text-align: right;
+			font-size: 20px;
+			background: #ffcd29;
+			border-radius: 10px;
+			width: 100%;
+			height: 100%;
+			box-shadow: 0 0 5px black;
+		}
+	</style>
+	<div id="box">
+		<div id="screen">
+			<input type="text" name="" id="re_screen" disabled="">
+		</div>
+		<div id="caculatorator">
+			<table>
+				<tr>
+					<td><input type="button" onclick="memory(this.value)" value="MC"></td>
+					<td><input type="button" onclick="memory(this.value)" value="M+"></td>
+					<td><input type="button" onclick="memory(this.value)" value="M-"></td>
+					<td><input type="button" onclick="memory(this.value)" value="MR"></td>
+				</tr>
+				<tr>
+					<td><input type="button" onclick="clearScr()" value="C"></td>
+					<td><input type="button" onclick="val(this.value)" value="+/-"></td>
+					<td><input type="button" value="/" onclick='caculator("/")'></td>
+					<td><input type="button" onclick="caculator('*')" value="*"></td>
+				</tr>
+				<tr>
+					<td><input type="button" onclick="val(this.value)" value="7"></td>
+					<td><input type="button" onclick="val(this.value)" value="8"></td>
+					<td><input type="button" onclick="val(this.value)" value="9"></td>
+					<td><input type="button" onclick="caculator('-')" value="-"></td>
+				</tr>
+				<tr>
+					<td><input type="button" onclick="val(this.value)" value="4"></td>
+					<td><input type="button" onclick="val(this.value)" value="5"></td>
+					<td><input type="button" onclick="val(this.value)" value="6"></td>
+					<td><input type="button" onclick="caculator('+')" value="+"></td>
+				</tr>
+				<tr>
+					<td><input type="button" onclick="val(this.value)" value="1"></td>
+					<td><input type="button" onclick="val(this.value)" value="2"></td>
+					<td><input type="button" onclick="val(this.value)" value="3"></td>
+					<td rowspan="2"><input type="button" onclick="result()" value="="></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="button" onclick="val(this.value)" value="0"></td>
+					
+					<td><input type="button" onclick="val(this.value)" value="."></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<script type="text/javascript" src="caculator.js"></script>
+</body>
+</html>
