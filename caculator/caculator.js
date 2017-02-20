@@ -54,8 +54,8 @@ function result(){
 					value1="";
 					value2="";
 					cacul="";
-					alert('Math Error');
-					document.getElementById('re_screen').value=0;
+					
+					document.getElementById('re_screen').value="Math";
 				}
 				else{
 					document.getElementById('re_screen').value=eval(value1+cacul+value2);
@@ -101,6 +101,8 @@ function memory(x){
 	switch(x){
 		case 'MC':{
 			m=0;
+			value2="";
+			value1=""
 			document.getElementById('re_screen').value=0;
 			break;
 		}
