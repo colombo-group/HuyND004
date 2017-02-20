@@ -87,9 +87,11 @@ function result(){
 					value1="";
 					value2="";
 					cacul="";	
-					document.getElementById('re_screen').value="Math";
+					document.getElementById('re_screen').value="Math Error";
 				}
 				else{
+					value2=parseFloat(value2);
+					value1=parseFloat(value1);
 					document.getElementById('re_screen').value=eval(value1+cacul+value2);	
 					// document.write(value3);
 
@@ -101,6 +103,8 @@ function result(){
 				break;
 			}
 			case '*': {
+				value2=parseFloat(value2);
+				value1=parseFloat(value1);
 				document.getElementById('re_screen').value=eval(value1+cacul+value2);
 				// document.write(value3);
 				value1="";
@@ -110,8 +114,10 @@ function result(){
 				break;
 			}
 			case '+': {
+				value2=parseFloat(value2);
+				value1=parseFloat(value1);
 				document.getElementById('re_screen').value=eval(value1+cacul+value2);
-				
+				// document.write(value1+cacul+value2);
 				// document.write(value3);
 				value1="";
 				value2="";
@@ -120,6 +126,8 @@ function result(){
 				break
 			}
 			case '-': {
+				value2=parseFloat(value2);
+				value1=parseFloat(value1);
 				document.getElementById('re_screen').value=eval(value1+cacul+value2);
 				
 				// document.write(value3);
