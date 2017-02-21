@@ -151,6 +151,7 @@ var m=0;
 function memory(x){
 	memo= document.getElementById('re_screen').value;
 	memo=parseFloat(memo);
+	m=parseFloat(m);
 	switch(x){
 		case 'MC':{
 			m=0;
@@ -161,15 +162,28 @@ function memory(x){
 			break;
 		}
 		case 'M+': {
+			value1="";
+			value2="";
+			cacul="";
+
 			m=eval(m+"+"+memo);
 			break;
 		}
 		case 'M-': {
-			m=eval(m+"-"+memo);
+			value2="";
+			value1="";
+			memo2=document.getElementById('re_screen').value;
+			// m-=memo;
+			// m=eval(m+"-"+memo);
+			m-=memo;
+
+			// document.getElementById('test').innerHTML=memo;
 			break;
 		}
 		case "MR":{
 			document.getElementById('re_screen').value=m;
+			// clearScr();
+			value3="tmp";
 			break;
 		}
 	}
