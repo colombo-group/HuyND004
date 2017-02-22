@@ -2,15 +2,23 @@ var value1="";
 var value2 ="";
 var cacul="";
 var value3="";
+var m=0;
+var test=document.getElementById('re_screen').value;
 window.onload= function(){
 	document.getElementById('re_screen').value=0;
 }
 function caculator(x){
-    if(value3!=""&&value1==""){
+    if(x!=""&&value1==""){
+    	value1=test;
+    }
+    if(value2!=""){
+    	result();
+    	value2="";
+    }
+    if(value3!=""&&value1==""&&x!=""){
     	cacul=x;
     	value1=document.getElementById('re_screen').value;
-    	value3="";
-    	// document.getElementById('re_screen').value=value1;	
+    		
     }
     if(value1 != ""){
         cacul = x;
@@ -49,6 +57,7 @@ function val(y){
 	}
 	// document.write('<div id="test"></div>');
 	else if(cacul!=""){
+
 			if(y=="0"){
 	 		if(value2.indexOf(y)==0){
 	 			y=y.substring(1);
@@ -64,6 +73,9 @@ function val(y){
 	 		}
 	 	}
 			if(y=="."){
+				// if(value2.indexOf(y)==0){
+				// 	alert('ok');
+				// }
 				if(value2.indexOf(y)==-1){
 					value2+=y;
 				}
@@ -130,10 +142,10 @@ function result(){
 				value1=parseFloat(value1);
 				document.getElementById('re_screen').value=eval(value1+cacul+value2);
 				
-				// document.write(value3);
+				
 				value1="";
 				value2="";
-				// cacul="";
+				cacul="";
 				value3="tmp";
 				break;
 			}
@@ -147,7 +159,7 @@ function clearScr(){
 	// alert('ok');
 	document.getElementById('re_screen').value=0;
 }
-var m=0;
+
 function memory(x){
 	memo= document.getElementById('re_screen').value;
 	memo=parseFloat(memo);
@@ -183,6 +195,8 @@ function memory(x){
 		case "MR":{
 			document.getElementById('re_screen').value=m;
 			// clearScr();
+			m=parseFloat(m);
+			value2=m;
 			value3="tmp";
 			break;
 		}
