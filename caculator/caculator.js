@@ -28,7 +28,7 @@ function val(y){
 	 if(cacul==""){
 	 	if(y=="0"){
 	 		if(value1.indexOf(y)==0){
-	 			y=y.substring(2);
+	 			y=y.slice(1);
 	 		}
 	 		for(i=1;i<=9;i++){
 	 			if(value1.indexOf(i)==1||value1.indexOf(i)==0){
@@ -36,14 +36,17 @@ function val(y){
 	 			}
 	 		}
 	 	}
+	 	if(value1.indexOf('.')==0){
+	 		value1="0.";
+	 	}
 		if(y=="."){
 			//kiem tra dau vao
 			if(value1.indexOf(y)==-1){
-				// alert('ok');
-				value1="0.";
+				value1+=y;
 			}
 
 		}
+
 		else if (y=="+/-"){
 			value1=eval("-1" * value1);
 			document.getElementById('re_screen').value=value1;
@@ -56,9 +59,9 @@ function val(y){
 	// document.write('<div id="test"></div>');
 	else if(cacul!=""){
 
-			if(y=="0"){
+		if(y=="0"){
 	 		if(value2.indexOf(y)==0){
-	 			y=y.substring(1);
+	 			y=y.slice(1);
 
 	 		}
 	 		if(value2.indexOf('.')==1){
@@ -70,14 +73,16 @@ function val(y){
 	 			}
 	 		}
 	 	}
-			if(y=="."){
-				// if(value2.indexOf(y)==0){
-				// 	alert('ok');
-				// }
-				if(value2.indexOf(y)==-1){
-					value2="0.";
-				}
+			if(value2.indexOf('.')==0){
+	 		value2="0.";
+	 	}
+		if(y=="."){
+			//kiem tra dau vao
+			if(value2.indexOf(y)==-1){
+				value2+=y;
 			}
+
+		}
 			else if(y=="+/-"){
 				value2=eval('-1'*value2);
 				document.getElementById('re_screen').value=value2;
@@ -90,6 +95,10 @@ function val(y){
 		}
 }
 function result(){
+	if(value1=="."||value2=="."){
+		document.getElementById('re_screen').value="Math Error";
+		return 0;
+	}
 	// document.write(cacul)
 		switch(cacul){
 			case '/': {
