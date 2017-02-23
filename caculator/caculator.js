@@ -28,11 +28,7 @@ function val(y){
 	 if(cacul==""){
 	 	if(y=="0"){
 	 		if(value1.indexOf(y)==0){
-	 			y=y.substring(1);
-
-	 		}
-	 		if(value1.indexOf('.')==1){
-	 			y="0";
+	 			y=y.substring(2);
 	 		}
 	 		for(i=1;i<=9;i++){
 	 			if(value1.indexOf(i)==1||value1.indexOf(i)==0){
@@ -43,8 +39,10 @@ function val(y){
 		if(y=="."){
 			//kiem tra dau vao
 			if(value1.indexOf(y)==-1){
-				value1+=y;
+				// alert('ok');
+				value1="0.";
 			}
+
 		}
 		else if (y=="+/-"){
 			value1=eval("-1" * value1);
@@ -77,7 +75,7 @@ function val(y){
 				// 	alert('ok');
 				// }
 				if(value2.indexOf(y)==-1){
-					value2+=y;
+					value2="0.";
 				}
 			}
 			else if(y=="+/-"){
@@ -184,10 +182,13 @@ function memory(x){
 		case 'M-': {
 			value2="";
 			value1="";
-			memo2=document.getElementById('re_screen').value;
+			// memo2=document.getElementById('re_screen').value;
+			document.getElementById('re_screen').value;
 			// m-=memo;
 			// m=eval(m+"-"+memo);
 			m-=memo;
+			// m=parseFloat(m);
+			// value2=m;
 
 			// document.getElementById('test').innerHTML=memo;
 			break;
